@@ -1,5 +1,6 @@
 package dave.dev.recipesharing.service;
 
+import dave.dev.recipesharing.exception.RecipeNotFoundException;
 import dave.dev.recipesharing.model.Recipe;
 import dave.dev.recipesharing.repository.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
