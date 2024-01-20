@@ -16,4 +16,10 @@ public class RecipeServiceImpl implements RecipeService {
     public List<Recipe> getAllRecipes() {
         return recipeRepository.findAll();
     }
+
+    @Override
+    public Recipe getRecipeById(Long id) {
+        return recipeRepository.findById(id)
+                .orElseThrow(() -> new RecipeNotFoundException(id));
+    }
 }
