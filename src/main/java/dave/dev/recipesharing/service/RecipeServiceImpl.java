@@ -37,4 +37,10 @@ public class RecipeServiceImpl implements RecipeService {
 
         return recipeRepository.save(existingRecipe);
     }
+
+    @Override
+    public void deleteRecipe(Long id) {
+        Recipe existingRecipe = getRecipeById(id);
+        recipeRepository.delete(existingRecipe);
+    }
 }
