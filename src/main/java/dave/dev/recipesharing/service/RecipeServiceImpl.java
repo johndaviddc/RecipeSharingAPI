@@ -23,4 +23,9 @@ public class RecipeServiceImpl implements RecipeService {
         return recipeRepository.findById(id)
                 .orElseThrow(() -> new RecipeNotFoundException(id));
     }
+
+    @Override
+    public Recipe createRecipe(Recipe recipe) {
+        return recipeRepository.save(recipe);
+    }
 }
