@@ -28,4 +28,13 @@ public class RecipeServiceImpl implements RecipeService {
     public Recipe createRecipe(Recipe recipe) {
         return recipeRepository.save(recipe);
     }
+
+    @Override
+    public Recipe updateRecipe(Long id, Recipe updatedRecipe) {
+        Recipe existingRecipe = getRecipeById(id);
+        existingRecipe.setName(updatedRecipe.getName());
+        existingRecipe.setDescription(updatedRecipe.getDescription());
+
+        return recipeRepository.save(existingRecipe);
+    }
 }
