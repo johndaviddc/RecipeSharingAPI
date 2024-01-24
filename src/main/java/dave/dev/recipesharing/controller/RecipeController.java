@@ -3,10 +3,7 @@ package dave.dev.recipesharing.controller;
 import dave.dev.recipesharing.model.Recipe;
 import dave.dev.recipesharing.service.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,4 +23,10 @@ public class RecipeController {
     public Recipe getRecipeById(@PathVariable Long id) {
         return recipeService.getRecipeById(id);
     }
+
+    @PostMapping
+    public Recipe createRecipe(@RequestBody Recipe recipe) {
+        return recipeService.createRecipe(recipe);
+    }
+    
 }
