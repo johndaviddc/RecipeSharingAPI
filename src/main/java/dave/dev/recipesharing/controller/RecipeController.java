@@ -28,5 +28,9 @@ public class RecipeController {
     public Recipe createRecipe(@RequestBody Recipe recipe) {
         return recipeService.createRecipe(recipe);
     }
-    
+
+    @PutMapping("/{id}")
+    public Recipe updateRecipe(@PathVariable Long id, @RequestBody Recipe recipe) {
+        return recipeService.updateRecipe(id, recipe);
+    }
 }
